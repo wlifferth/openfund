@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block navitems %}
+<li><a href="{% url 'login' %}" class="log-in">Log In</a></li>
+<li><a href="{% url 'signup' %}" class="sign-up">Log In</a></li>
+{% endblock %}
+{% block title %}
+Home | Wealth Watcher
+{% endblock %}
+{% block content %}
+<div id="body-content splash-container">
+  <div id="">
+    <img id="splash" src="{% static 'main/splash3.jpg' %}">
+  </div>
+</div>
+{% endblock %}

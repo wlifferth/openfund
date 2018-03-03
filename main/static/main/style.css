@@ -1,0 +1,113 @@
+/**********************
+General
+**********************/
+
+* {
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+body {
+  margin-top: 100px;
+  background-color: #202020;
+}
+
+.light-shadow {
+    -webkit-box-shadow: 0 8px 6px -6px #000;
+    -moz-box-shadow: 0 8px 6px -6px #000;
+    box-shadow: 0 8px 6px -6px #000;
+}
+
+#body-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/**********************
+Navbar
+**********************/
+
+.navbar {
+  min-height: 80px;
+}
+.navbar li a {
+  font-size: 20px;
+}
+
+.navbar-logo
+{
+  padding: 0 10px;
+  height: 60px;
+  line-height: 80px;
+}
+
+.navbar-toggle {
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 23px;
+  padding: 9px 10px !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    padding-top: 26.5px;
+    padding-bottom: -20px;
+    line-height: 27px;
+  }
+}
+
+.log-in {
+
+}
+
+/**********************
+Forms
+**********************/
+
+.form-row {
+  margin: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  color: black;
+}
+
+.content-box {
+  background-color: #666;
+  color: white;
+  //margin: 20px 5px;
+  //padding: 20px;
+}
+
+.content-box-title {
+  font-size: 30px;
+}
+
+#comment {
+  min-width: 300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#comment-submit {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#splash {
+  margin-top: -30px;
+  max-width: 100%;
+}
