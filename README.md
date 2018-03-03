@@ -1,0 +1,2 @@
+# openfund
+Democratizing investing strategies
