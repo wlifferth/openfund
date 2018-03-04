@@ -1,0 +1,44 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block navitems %}
+{% endblock %}
+{% block title %}
+Signup | OpenFund
+{% endblock %}
+{% block content %}
+<div id="body-content">
+  <div class="content-box sign-up-box light-shadow">
+    <div class="content-box-title">
+      Welcome to OpenFund; we're glad you're here :)
+    </div>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="row input-row">
+        <div class="col-xs-4">
+          <label for="name">Name</label>
+        </div>
+        <div class="col-xs-8">
+          <input id="name"></input>
+        </div>
+      </div>
+      <div class="row input-row">
+        <div class="col-xs-4">
+          <label for="password">Password</label>
+        </div>
+        <div class="col-xs-8">
+          <input type="password" id="password"></input>
+        </div>
+      </div>
+      <div class="row input-row">
+        <div class="col-xs-4">
+          <label for="password">Confirm Password</label>
+        </div>
+        <div class="col-xs-8">
+          <input type="password" id="password"></input>
+        </div>
+      </div>
+      <button type="submit" class="center-button material-button">Sign Up</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

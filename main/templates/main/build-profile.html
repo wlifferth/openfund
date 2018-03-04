@@ -1,0 +1,297 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block navitems %}
+{% endblock %}
+{% block title %}
+Signup | OpenFund
+{% endblock %}
+{% block content %}
+<div id="body-content">
+    <form method="POST">
+      {% csrf_token %}
+        <div class="content-box light-shadow">
+            <div class="content-box-title">
+                Hi there NAME!
+            </div>
+            OpenFund is here to help you achieve your goals--so we're going to ask you some questions about the goals you have and who you are.
+        </div>
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        1
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        What's important to you?
+                    </div>
+                    Take a moment to tell us what's important to you. What are you saving for? What are you excited for? What keeps you up at night?
+                    <textarea id="general-goals"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        2
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        What do your finances look like right now?
+                    </div>
+                    Don't worry if you don't have exact numbers--we're just looking to get a big picture here.
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="current-savings">How much do you have in savings?</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="current-savings" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="monthly-income">What's your average monthly take-home pay?</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="monthly-income" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="debt">How much debt do you have? <div class="deets">(think mortgage, educational loans, credit card debt)</div></label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="debt" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        3
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        How's the family?
+                    </div>
+                    Your loved ones can have a big impact on how your plan and save for the future.
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="married">Are you married?</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Nope
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="switch">
+                                        <input id="married" type="checkbox">
+                                        <span class="toggle-slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Yup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-4">
+                            <label for="number-children">How many children do you have?</label>
+                        </div>
+                        <div class="col-xs-2">
+                            <output name="amount" id="amount" class="slider-label text-right" for="rangeInput">0</output>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="range" id="number-children" class="slider" name="rangeInput" min="0" max="7" value="0" oninput="amount.value=rangeInput.value">
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="married">Do you think you'll have a child in the next 5 years?</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Nope
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="switch">
+                                        <input id="children-soon" type="checkbox">
+                                        <span class="toggle-slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Yup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="married">Do you or anyone in your immediate family have serious health problems?</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Nope
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="switch">
+                                        <input id="children-soon" type="checkbox">
+                                        <span class="toggle-slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Yup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        4
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        Do you have any specific financial goals?
+                    </div>
+                    Working towards a goal can be a powerful motivator. What are you looking forward to?
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="retirement">Do you want to start investing for retirement?</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Nope
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="switch">
+                                        <input id="retirement" type="checkbox">
+                                        <span class="toggle-slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Yup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row input-row">
+                        <div class="col-xs-4">
+                            <label for="retirementTime">How long do you have until retirement?</label>
+                        </div>
+                        <div class="col-xs-2">
+                            <output name="retirementTimeAmount" id="retirementTimeAmount" class="slider-label text-right" for="retirementTime">0</output>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="range" id="retirementTime" class="slider" name="retirementTime" min="0" max="50" value="0" oninput="retirementTimeAmount.value=retirementTime.value">
+                        </div>
+                    </div>
+
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="married">Are you buying a house or a car in the future?<div class="deets">In years</div></label>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Nope
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="switch">
+                                        <input id="married" type="checkbox">
+                                        <span class="toggle-slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div class="slider-label">
+                                        Yup
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row input-row">
+                        <div class="col-xs-4">
+                            <label for="bigTicketTime">How long until the next big purchase?<div class="deets">In years</div></label>
+                        </div>
+                        <div class="col-xs-2">
+                            <output name="bigTicketTimeAmount" id="bigTicketTimeAmount" class="slider-label text-right" for="bigTicketTime">0</output>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="range" id="bigTicketTime" class="slider" name="bigTicketTime" min="0" max="50" value="0" oninput="bigTicketTimeAmount.value=bigTicketTime.value">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        6
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        That wasn't so bad, was it?
+                    </div>
+                    Thanks for walking through that with us! If you'd like to go back and check your answers you can press the "previous" button. Otherwise hit "Submit!" and we're off to the races.
+                </div>
+                <button type="submit" class="center-button material-button">Submit!</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
