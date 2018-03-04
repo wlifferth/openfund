@@ -8,7 +8,7 @@ Signup | OpenFund
 {% block content %}
 <div id="body-content">
     <form method="POST">
-      {% csrf_token %}
+        {% csrf_token %}
         <div class="content-box light-shadow">
             <div class="content-box-title">
                 Hi there NAME!
@@ -27,7 +27,7 @@ Signup | OpenFund
                         What's important to you?
                     </div>
                     Take a moment to tell us what's important to you. What are you saving for? What are you excited for? What keeps you up at night?
-                    <textarea id="general-goals"></textarea>
+                    <textarea id="general-goals" name="generalGoals"></textarea>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="current-savings" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="current-savings" name="currentSavings" aria-label="Amount (to the nearest dollar)">
                                 <span class="input-group-addon">.00</span>
                             </div>                        </div>
                     </div>
@@ -61,7 +61,7 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="monthly-income" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="monthly-income" name="currentTakeHome" aria-label="Amount (to the nearest dollar)">
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -73,7 +73,19 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="debt" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="debt" name="currentDebt" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="targetContribution">How much do you think you'll be able to save every month?<div class="deets">Saving more is always better, but be sure to be realistic!</div></label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="targetContribution" name="targetContribution" aria-label="Amount (to the nearest dollar)">
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -81,6 +93,9 @@ Signup | OpenFund
                 </div>
             </div>
         </div>
+
+
+
         <div class="content-box light-shadow">
             <div class="row">
                 <div class="col-xs-1">
@@ -106,7 +121,7 @@ Signup | OpenFund
                                 </div>
                                 <div class="col-xs-3">
                                     <label class="switch">
-                                        <input id="married" type="checkbox">
+                                        <input id="married" type="checkbox" name="married">
                                         <span class="toggle-slider round"></span>
                                     </label>
                                 </div>
@@ -123,15 +138,15 @@ Signup | OpenFund
                             <label for="number-children">How many children do you have?</label>
                         </div>
                         <div class="col-xs-2">
-                            <output name="amount" id="amount" class="slider-label text-right" for="rangeInput">0</output>
+                            <output name="currentChildrenAmount" id="currentChildrenAmount" class="slider-label text-right" for="currentChildren">0</output>
                         </div>
                         <div class="col-xs-6">
-                            <input type="range" id="number-children" class="slider" name="rangeInput" min="0" max="7" value="0" oninput="amount.value=rangeInput.value">
+                            <input type="range" id="currentChildren" class="slider" name="currentChildren" min="0" max="7" value="0" oninput="currentChildrenAmount.value=currentChildren.value">
                         </div>
                     </div>
                     <div class="row input-row">
                         <div class="col-xs-6">
-                            <label for="married">Do you think you'll have a child in the next 5 years?</label>
+                            <label for="childSoon">Do you think you'll have a child in the next 5 years?</label>
                         </div>
                         <div class="col-xs-6">
                             <div class="row">
@@ -142,7 +157,7 @@ Signup | OpenFund
                                 </div>
                                 <div class="col-xs-3">
                                     <label class="switch">
-                                        <input id="children-soon" type="checkbox">
+                                        <input id="children-soon" type="checkbox" name="childSoon">
                                         <span class="toggle-slider round"></span>
                                     </label>
                                 </div>
@@ -167,7 +182,7 @@ Signup | OpenFund
                                 </div>
                                 <div class="col-xs-3">
                                     <label class="switch">
-                                        <input id="children-soon" type="checkbox">
+                                        <input id="children-soon" type="checkbox" name="healthProblems">
                                         <span class="toggle-slider round"></span>
                                     </label>
                                 </div>
@@ -208,7 +223,7 @@ Signup | OpenFund
                                 </div>
                                 <div class="col-xs-3">
                                     <label class="switch">
-                                        <input id="retirement" type="checkbox">
+                                        <input id="retirement" type="checkbox" name="retirement">
                                         <span class="toggle-slider round"></span>
                                     </label>
                                 </div>
@@ -220,10 +235,9 @@ Signup | OpenFund
                             </div>
                         </div>
                     </div>
-
                     <div class="row input-row">
                         <div class="col-xs-4">
-                            <label for="retirementTime">How long do you have until retirement?</label>
+                            <label for="retirementTime">How long do you have until retirement?<div class="deets">In years</div></label>
                         </div>
                         <div class="col-xs-2">
                             <output name="retirementTimeAmount" id="retirementTimeAmount" class="slider-label text-right" for="retirementTime">0</output>
@@ -235,7 +249,20 @@ Signup | OpenFund
 
                     <div class="row input-row">
                         <div class="col-xs-6">
-                            <label for="married">Are you buying a house or a car in the future?<div class="deets">In years</div></label>
+                            <label for="debt">How much whould you like to have saved for retirement?</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="retirementTargetAmount" name="retirementTargetAmount" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="bigTicket">Are you buying a house or a car in the future?</label>
                         </div>
                         <div class="col-xs-6">
                             <div class="row">
@@ -246,7 +273,7 @@ Signup | OpenFund
                                 </div>
                                 <div class="col-xs-3">
                                     <label class="switch">
-                                        <input id="married" type="checkbox">
+                                        <input id="bigTicket" type="checkbox" name="bigTicket" value="off">
                                         <span class="toggle-slider round"></span>
                                     </label>
                                 </div>
@@ -271,9 +298,75 @@ Signup | OpenFund
                         </div>
                     </div>
 
+                    <div class="row input-row">
+                        <div class="col-xs-6">
+                            <label for="debt">What's the price tag on that shiny new fill-in-the-blank?</label>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="text" class="form-control" id="bigTicketTargetAmount" name="bigTicketTargetAmount" aria-label="Amount (to the nearest dollar)">
+                                <span class="input-group-addon">.00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+        <div class="content-box light-shadow">
+            <div class="row">
+                <div class="col-xs-1">
+                    <div class="big-number">
+                        5
+                    </div>
+                </div>
+                <div class="col-xs-11">
+                    <div class="content-box-title">
+                        How do you feel about risk?
+                    </div>
+                    Knowing your tolerance for risk can be important to choosing the right investment strategy. These questions will help us get a read on how you react to uncertainty and potential for loss.
+                    <div class="question">
+                      <label for="riskQuestionOne">Imagine you're on a game show and you've won $1,000. The host gives you a chance to complete another challenge; if you succeed you'll win a total of $4,000, but if you loose you'll go home with nothing. What do you do?</label>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionOne" value="4">Go for it! You only live once.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionOne" value="0">Take the winnings and get out while I'm on top.</label>
+                      </div>
+                    </div>
+                    <div class="question">
+                      <label for="riskQuestionOne">Imagine you own a stock that was worth $600, and due to a market down turn it is now worth $450. What do you do?</label>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionTwo" value="0">Sell it now to avoid loosing any more.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionTwo" value="2">Hold on to it and wait for it to go back up.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionTwo" value="4">Buy more of the same stock--it's cheaper than ever!</label>
+                      </div>
+                    </div>
+                    <div class="question">
+                      <label for="riskQuestionOne">Do you agree with the following statement?<br>I enjoy taking risks and don't worry to much about loosing.</label>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionThree" value="4">I strongly agree.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionThree" value="2">I neither agree nor disagree.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="riskQuestionThree" value="0">I strongly disagree.</label>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div class="content-box light-shadow">
             <div class="row">

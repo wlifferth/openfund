@@ -28,6 +28,7 @@ def build_profile(request, user_id):
     elif request.method == "POST":
         # Update new user object
         # Redirect to select strategy
+        print(request.POST)
         return redirect('/user/{}/select-strategy'.format(user_id))
 
 def select_strategy(request, user_id):
