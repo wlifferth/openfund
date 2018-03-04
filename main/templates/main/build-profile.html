@@ -11,7 +11,7 @@ Signup | OpenFund
         {% csrf_token %}
         <div class="content-box light-shadow">
             <div class="content-box-title">
-                Hi there NAME!
+                Hi there {{ name }}!
             </div>
             OpenFund is here to help you achieve your goals--so we're going to ask you some questions about the goals you have and who you are.
         </div>
@@ -45,7 +45,7 @@ Signup | OpenFund
                     Don't worry if you don't have exact numbers--we're just looking to get a big picture here.
                     <div class="row input-row">
                         <div class="col-xs-6">
-                            <label for="current-savings">How much do you have in savings?</label>
+                            <label for="current-savings">How much do you have in savings?<div class="deets">Don't worry if it's not where you'd like it to be--that's what we're here for!</div></label>
                         </div>
                         <div class="col-xs-4">
                             <div class="input-group">
