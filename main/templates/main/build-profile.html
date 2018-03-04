@@ -50,7 +50,7 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="current-savings" name="currentSavings" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="current-savings" name="currentSavings" aria-label="Amount (to the nearest dollar)" value=0>
                                 <span class="input-group-addon">.00</span>
                             </div>                        </div>
                     </div>
@@ -61,7 +61,7 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="monthly-income" name="currentTakeHome" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="monthly-income" name="currentTakehome" aria-label="Amount (to the nearest dollar)" value=0>
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -73,19 +73,19 @@ Signup | OpenFund
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="debt" name="currentDebt" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="debt" name="currentDebt" aria-label="Amount (to the nearest dollar)" value=0>
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
                     </div>
                     <div class="row input-row">
                         <div class="col-xs-6">
-                            <label for="targetContribution">How much do you think you'll be able to save every month?<div class="deets">Saving more is always better, but be sure to be realistic!</div></label>
+                            <label for="tribution">How much do you think you'll be able to save every month?<div class="deets">Saving more is always better, but be sure to be realistic!</div></label>
                         </div>
                         <div class="col-xs-4">
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                <input type="text" class="form-control" id="targetContribution" name="targetContribution" aria-label="Amount (to the nearest dollar)">
+                                <input type="text" class="form-control" id="targetContribution" name="targetContribution" aria-label="Amount (to the nearest dollar)" value=0>
                                 <span class="input-group-addon">.00</span>
                             </div>
                         </div>
@@ -329,36 +329,36 @@ Signup | OpenFund
                     </div>
                     Knowing your tolerance for risk can be important to choosing the right investment strategy. These questions will help us get a read on how you react to uncertainty and potential for loss.
                     <div class="question">
-                      <label for="riskQuestionOne">Imagine you're on a game show and you've won $1,000. The host gives you a chance to complete another challenge; if you succeed you'll win a total of $4,000, but if you loose you'll go home with nothing. What do you do?</label>
+                      <label for="questionOne">Imagine you're on a game show and you've won $1,000. The host gives you a chance to complete another challenge; if you succeed you'll win a total of $4,000, but if you loose you'll go home with nothing. What do you do?</label>
                       <div class="radio">
-                          <label><input type="radio" name="riskQuestionOne" value="4">Go for it! You only live once.</label>
+                          <label><input type="radio" name="questionOne" value="4">Go for it! You only live once.</label>
                       </div>
                       <div class="radio">
-                          <label><input type="radio" name="riskQuestionOne" value="0">Take the winnings and get out while I'm on top.</label>
-                      </div>
-                    </div>
-                    <div class="question">
-                      <label for="riskQuestionOne">Imagine you own a stock that was worth $600, and due to a market down turn it is now worth $450. What do you do?</label>
-                      <div class="radio">
-                          <label><input type="radio" name="riskQuestionTwo" value="0">Sell it now to avoid loosing any more.</label>
-                      </div>
-                      <div class="radio">
-                          <label><input type="radio" name="riskQuestionTwo" value="2">Hold on to it and wait for it to go back up.</label>
-                      </div>
-                      <div class="radio">
-                          <label><input type="radio" name="riskQuestionTwo" value="4">Buy more of the same stock--it's cheaper than ever!</label>
+                          <label><input type="radio" name="questionOne" value="0">Take the winnings and get out while I'm on top.</label>
                       </div>
                     </div>
                     <div class="question">
-                      <label for="riskQuestionOne">Do you agree with the following statement?<br>I enjoy taking risks and don't worry to much about loosing.</label>
+                      <label for="questionTwo">Imagine you own a stock that was worth $600, and due to a market down turn it is now worth $450. What do you do?</label>
                       <div class="radio">
-                          <label><input type="radio" name="riskQuestionThree" value="4">I strongly agree.</label>
+                          <label><input type="radio" name="questionTwo" value="0">Sell it now to avoid loosing any more.</label>
                       </div>
                       <div class="radio">
-                          <label><input type="radio" name="riskQuestionThree" value="2">I neither agree nor disagree.</label>
+                          <label><input type="radio" name="questionTwo" value="2">Hold on to it and wait for it to go back up.</label>
                       </div>
                       <div class="radio">
-                          <label><input type="radio" name="riskQuestionThree" value="0">I strongly disagree.</label>
+                          <label><input type="radio" name="questionTwo" value="4">Buy more of the same stock--it's cheaper than ever!</label>
+                      </div>
+                    </div>
+                    <div class="question">
+                      <label for="questionThree">Do you agree with the following statement?<br>I enjoy taking risks and don't worry to much about loosing.</label>
+                      <div class="radio">
+                          <label><input type="radio" name="questionThree" value="4">I strongly agree.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="questionThree" value="2">I neither agree nor disagree.</label>
+                      </div>
+                      <div class="radio">
+                          <label><input type="radio" name="questionThree" value="0">I strongly disagree.</label>
                       </div>
                     </div>
                 </div>
